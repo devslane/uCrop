@@ -91,6 +91,8 @@ public class UCropActivity extends AppCompatActivity {
     private int mToolbarWidgetColor;
     @ColorInt
     private int mRootViewBackgroundColor;
+    @ColorInt
+    private int mBottomWidgetBackground;
     @DrawableRes
     private int mToolbarCancelDrawable;
     @DrawableRes
@@ -283,6 +285,7 @@ public class UCropActivity extends AppCompatActivity {
         mToolbarColor = intent.getIntExtra(UCrop.Options.EXTRA_TOOL_BAR_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_toolbar));
         mActiveWidgetColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_COLOR_WIDGET_ACTIVE, ContextCompat.getColor(this, R.color.ucrop_color_widget_background));
         mActiveControlsWidgetColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_COLOR_CONTROLS_WIDGET_ACTIVE, ContextCompat.getColor(this, R.color.ucrop_color_active_controls_color));
+        mBottomWidgetBackground = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_COLOR_BOTTOM_WIDGET_BACKGROUND, ContextCompat.getColor(this, R.color.ucrop_color_widget_background));
 
         mToolbarWidgetColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_WIDGET_COLOR_TOOLBAR, ContextCompat.getColor(this, R.color.ucrop_color_toolbar_widget));
         mToolbarCancelDrawable = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_WIDGET_CANCEL_DRAWABLE, R.drawable.ucrop_ic_cross);
@@ -399,10 +402,12 @@ public class UCropActivity extends AppCompatActivity {
         ImageView stateScaleImageView = findViewById(R.id.image_view_state_scale);
         ImageView stateRotateImageView = findViewById(R.id.image_view_state_rotate);
         ImageView stateAspectRatioImageView = findViewById(R.id.image_view_state_aspect_ratio);
+        View bottomBackgroundView = findViewById(R.id.wrapper_states);
 
         stateScaleImageView.setImageDrawable(new SelectedStateListDrawable(stateScaleImageView.getDrawable(), mActiveControlsWidgetColor));
         stateRotateImageView.setImageDrawable(new SelectedStateListDrawable(stateRotateImageView.getDrawable(), mActiveControlsWidgetColor));
         stateAspectRatioImageView.setImageDrawable(new SelectedStateListDrawable(stateAspectRatioImageView.getDrawable(), mActiveControlsWidgetColor));
+        bottomBackgroundView.setBackgroundColor(mBottomWidgetBackground);
     }
 
 
