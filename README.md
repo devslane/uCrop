@@ -24,9 +24,7 @@
 	}
 	```
 
-    ``` implementation 'com.github.yalantis:ucrop:2.2.3' ``` - lightweight general solution 
-    
-    ``` implementation 'com.github.yalantis:ucrop:2.2.3-native' ``` - get power of the native code to preserve image quality (+ about 1.5 MB to an apk size)
+    ``` implementation 'com.github.devslane:ucrop:2.2.4' ``` - lightweight general solution 
     
 2. Add UCropActivity into your AndroidManifest.xml
 
